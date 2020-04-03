@@ -93,8 +93,8 @@ func SetTitle()
 	if &filetype == 'sh'
 		call setline(1,"\#########################################################################")
 		call append(line("."), "\# File Name: ".expand("%"))
-		call append(line(".")+1, "\# Author: Lain")
-		call append(line(".")+2, "\# mail: 2649256918@qq.com")
+		call append(line(".")+1, "\# Author: LTQ")
+		call append(line(".")+2, "\# mail: luotianqi777@gmail.com")
 		call append(line(".")+3, "\# Created Time: ".strftime("%c"))
 		call append(line(".")+4, "\#########################################################################")
 		call append(line(".")+5, "\#!/bin/bash")
@@ -102,8 +102,8 @@ func SetTitle()
 	else
 		call setline(1, "/*************************************************************************")
 		call append(line("."), "    > File Name: ".expand("%"))
-		call append(line(".")+1, "    > Author: Lain")
-		call append(line(".")+2, "    > Mail: 2649256918@qq.com ")
+		call append(line(".")+1, "    > Author: LTQ")
+		call append(line(".")+2, "    > Mail: luotianqi777@gmail.com ")
 		call append(line(".")+3, "    > Created Time: ".strftime("%c"))
 		call append(line(".")+4, " ************************************************************************/")
 		call append(line(".")+5, "")
@@ -141,10 +141,10 @@ func! CompileRunGcc()
 	exec "w"
 	exec "!clear"
 	if &filetype == 'c'
-		exec "!g++ % -o %<"
+		exec "!g++ -g % -o %<"
 		exec "! ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
+		exec "!g++ -g % -o %<"
 		exec "! ./%<"
 	elseif &filetype == 'python'
 		exec "!python3 %"
