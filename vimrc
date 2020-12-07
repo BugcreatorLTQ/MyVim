@@ -59,8 +59,6 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strf
 set autoread
 "共享剪贴板
 set clipboard+=unnamed
-"从不备份
-set nobackup
 " 突出显示当前行
 set cursorline
 " 不使用vi的键盘模式
@@ -84,8 +82,9 @@ set shiftwidth=4
 set smarttab
 " 历史记录数
 set history=1000
-" 禁止生成临时文件
+" 禁止生成备份文件
 set nobackup
+" 禁止生成临时文件
 set noswapfile
 " 编码设置
 set enc=utf-8
