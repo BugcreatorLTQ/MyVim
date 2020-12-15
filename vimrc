@@ -16,8 +16,6 @@ set clipboard+=unnamed
 set cursorline
 " 不使用vi的键盘模式
 set nocompatible
-" 自动刷新文件
-set autoread
 " 语法高亮
 set syntax=on
 " 去掉输入错误的提示声音
