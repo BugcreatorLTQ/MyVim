@@ -1,6 +1,6 @@
 " 显示行号
 set number
-" 启动的时候不显示那个援助乌干达儿童的提示
+" 提示信息缩写
 set shortmess=atI
 " 输入的命令显示出来
 set showcmd
