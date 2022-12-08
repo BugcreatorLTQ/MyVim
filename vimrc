@@ -13,7 +13,7 @@ set autoread
 "共享剪贴板
 set clipboard+=unnamed
 " 突出显示当前行
-set cursorline
+" set cursorline
 " 不使用vi的键盘模式
 set nocompatible
 " 语法高亮
@@ -51,46 +51,3 @@ set laststatus=2
 filetype on
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=_,$,@,%,#,-
-"自动补全
-:inoremap ( ()<ESC>i
-:inoremap ) <c-r>=ClosePair(')')<CR>
-:inoremap { {<CR>}<ESC>O
-:inoremap } <c-r>=ClosePair('}')<CR>
-:inoremap [ []<ESC>i
-:inoremap ] <c-r>=ClosePair(']')<CR>
-:inoremap " ""<ESC>i
-:inoremap ' ''<ESC>i
-function! ClosePair(char)
-	if getline('.')[col('.') - 1] == a:char
-		return "\<Right>"
-	else
-		return a:char
-	endif
-endfunction
-" 按F5编译运行
-map <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-	exec "w"
-	exec "!clear"
-	if &filetype == 'c'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "! ./%<"
-	elseif &filetype == 'python'
-		exec "!python3 %"
-	elseif &filetype == 'java'
-		exec "!javac %"
-		exec "!java %<"
-	elseif &filetype == 'sh'
-		:!./%
-	endif
-endfunc
-" C,C++的调试
-map <F6> :call Rungdb()<CR>
-func! Rungdb()
-	exec "w"
-	exec "!g++ % -g -o %<"
-	exec "!gdb ./%<"
-endfunc
