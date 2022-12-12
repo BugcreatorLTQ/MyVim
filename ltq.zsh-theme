@@ -12,9 +12,8 @@ ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="●"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-local branch="${_yellow}$(git_prompt_info)${_reset}"
+local branch='${_yellow}$(git_prompt_info)${_reset}'
 
-PROMPT="${_green}╭─${_reset}${time} ${dir} ${branch}
-${_green}╰─${_reset}${cmd} "
-
+PROMPT="╭─${time} ${dir} ${branch}
+╰─${cmd} "
 RPROMPT="${code}"
