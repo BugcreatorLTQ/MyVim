@@ -17,6 +17,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # 不即时更新git状态，很流畅，但是git状态只显示打开shell时的状态
 local branch="${_yellow}$(git_prompt_info)${_reset}"
 
-PROMPT="╭─${time} ${dir} ${branch}
-╰─${cmd} "
+PROMPT="${time} ${dir} ${branch}
+${cmd} "
 RPROMPT="${code}"
